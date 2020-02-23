@@ -18,21 +18,19 @@ import matplotlib.pyplot as plt
 --------------------------------------------------------------------------------------------
 '''
 
-# Define 
+# Define the x axis
 num = 60
-z = np.linspace(-np.pi,np.pi,num)
+x = np.linspace(-np.pi,np.pi,num)
+
+# Intialize the function and integral arrays
 f = np.zeros(num)
 integral = np.zeros(num)
 
-# Define the function
+# Define the function and integral
 for i in range(0,num):
-    f[i] = np.cos(z[i])
-
+    f[i] = np.cos(x[i])
 for i in range(0,num):
-    integral[i] = np.trapz(f[0:i+1],z[0:i+1])
-
-print(f[0:num])
-print(integral)
+    integral[i] = np.trapz(f[0:i+1],x[0:i+1])
 
 '''
 --------------------------------------------------------------------------------------------
@@ -41,8 +39,8 @@ print(integral)
 '''
 
 plt.figure(1)
-plt.plot(z,f,'k',label = 'Function')
-plt.plot(z,integral,'r',label = 'Integral')
+plt.plot(x,f,'k',label = 'Function')
+plt.plot(x,integral,'r',label = 'Integral')
 plt.xlabel('x-axis')
 plt.ylabel('y-axis')
 plt.legend()
